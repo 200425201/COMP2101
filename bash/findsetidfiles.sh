@@ -26,8 +26,15 @@ echo ""
 echo "Setgid files:"
 echo "============="
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 6
+# 2>/dev/null removes the garbage
+# -type f finds file not directory
+# sort -k 6 shorts on column 6 which shows group
+# -2000 finds guid enabled bit files
 echo ""
 echo "The 10 largest regular files in the system:"
 echo "============="
 find / -type f -exec ls -alh 2>/dev/null --block-size=M {} \; | sort -h -k5 | tail -n 10 | awk '{print $5, $3, $9}'
+# This command find files on root and applies the ls -alh command on each findings with human readable filesize format.
+# also garbages the errors because people will use this without sudo.
+# short command shorts file normally and also on colum 5 which shows filesize in human readable formate, short with h which command understands> difference between 10 MB and 1 GB. head shows last 10 files and awk is different programming language with numbers in this formate shows columns in perticular oreder as described on task2 on top.
 echo ""
