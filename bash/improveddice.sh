@@ -17,12 +17,12 @@
 # Tell the user we have started processing
 echo "We have started processing..."
 # roll the dice and save the results
-range=6
+range=6 # creating variables and adding value to it
 bias=1
-dice1=$(( RANDOM % range + bias ))
+dice1=$(( RANDOM % range + bias )) #adding variable and puting value after processing with another variables and generated values into
 dice2=$(( RANDOM % range + bias ))
-sum=$(( dice1 + dice2 ))
-average=$(( sum / 2 ))
-# display the results
+sum=$(( dice1 + dice2 )) #creating sum of the 2 variables processed just
+average=$(( sum / 2 )) # creating average and saving to variable
+# display a summary of what was rolled with echo and calling the variables
 echo "Rolled two times $dice1, $dice2 and a sum is $sum"
 echo "Rolled two times $dice1, $dice2 and an average is $average"
