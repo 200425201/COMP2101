@@ -17,34 +17,15 @@
 ###############
 # Variables   #
 ###############
-loginname="$USER" #dynamic user name saving to variable
-hostname="$(hostname)" #dynamic hostname saving to variable
-day=$(date +%A) #A for day names
-currenttime=$(date +%I:%M\ %p) #date with specific format
+title="Overlord"
+myname="dennis"
+hostname="myhostname"
 
 ###############
 # Main        #
 ###############
-if [ "$day" = Monday ] #if else to compare string
-then
-cows="Welcome to planet $hostname, joyful $loginname!" #customized coutput
-elif [ "$day" = Tuesday ]
-then
-cows="Welcome to planet $hostname, knowing $loginname!"
-elif [ "$day" = Wednesday ]
-then
-cows="Welcome to planet $hostname, knowledgeable $loginname!"
-elif [ "$day" = Thursday ]
-then
-cows="Welcome to planet $hostname, ladylike $loginname!"
-elif [ "$day" = Friday ]
-then
-cows="Welcome to planet $hostname, alluring $loginname!"
-elif [ "$day" = Saturday ]
-then
-cows="Welcome to planet $hostname, loyal $loginname!"
-else
-cows="Welcome to planet $hostname, musical $loginname!"
-fi
-cowsay "$cows It is $currenttime on $day ."
-#adding output to cowsay to normalize the cowsay command's output.
+cat <<EOF
+
+Welcome to planet $hostname, "$title $myname!"
+
+EOF

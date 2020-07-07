@@ -9,45 +9,7 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-completed="String matching successful." # string to save
-ferror="Please try again." # string to save
-referenceString="Password" # saving password to comapare
-read -s -p "Enter the String:" myString #Silent input from useer
-echo #empty line
-if [ $myString = $referenceString ]; then #if else for string comparision and nested if
-  echo "$completed"
-  echo
-  else
-    echo "$ferror"
-    read -s -p "Enter the String:" myString
-if [ $myString = $referenceString ]; then
-echo "$completed"
-echo
-else
-  echo "$ferror"
-  read -s -p "Enter the String:" myString
-	if [ $myString = $referenceString ]; then
-  echo "$completed"
-  echo
-  else
- echo "$ferror"
- read -s -p "Enter the String:" myString
- if [ $myString = $referenceString ]; then
-   echo "$completed"
-   echo
- else
-   echo
-   echo "$ferror"
-   read -s -p "Enter the String:" myString
- if [ $myString = $referenceString ]; then
-   echo "$completed"
-   echo
- else
-   echo
-   echo "Maximum limit exeeded."
-   fi
-  fi
- fi
-  fi
-fi
-#ending if else conditions
+myString="TestString"
+referenceString="password"
+
+[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."
